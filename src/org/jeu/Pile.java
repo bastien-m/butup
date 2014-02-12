@@ -14,13 +14,13 @@ public class Pile {
 	
 	private List<Bouton> pile;
 	
-	public Pile(Pile.Bouton bouton){
+	public Pile(Bouton bouton){
 		pile = new ArrayList<>();
 		pile.add(bouton);
 	}
 	
 	
-	public Pile(ArrayList<Bouton> piles){
+	public Pile(List<Bouton> piles){
 		this.pile = piles;
 	}
 	
@@ -61,6 +61,10 @@ public class Pile {
 		return true;
 	}
 
+	Bouton depiler(){
+		int indiceMax = pile.size() - 1;
+		return pile.remove(indiceMax);
+	}
 
 	@Override
 	public String toString(){
