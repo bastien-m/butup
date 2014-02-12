@@ -7,7 +7,7 @@ import org.jeu.Pile.Bouton;
 
 public class Plateau {
 
-	
+	private static final int INDICE_MAX = 8;
 	private List<Pile> piles;
 	
 	Plateau(){
@@ -24,17 +24,18 @@ public class Plateau {
 	}
 	
 	void semer(int indiceDepart, int indiceArrivee){
-		indiceDepart  = correctionIndex(indiceDepart);
-		indiceArrivee = correctionIndex(indiceArrivee);
+		int indicePileDepart  = correctionIndex(indiceDepart);
+		int indicePileArrivee = correctionIndex(indiceArrivee);
 		
-		Pile depart = piles.get(indiceDepart);
-		Pile Arrivee = piles.get(indiceArrivee);
+		Pile depart = piles.get(indicePileDepart);
+		Pile Arrivee = piles.get(indicePileArrivee);
 		
 		//6 4 --> 7 8 0 1 2 3 4
 		boolean estTermine = false;
-		for(int i = indiceDepart; !estTermine; i++){
-			
-			
+		while(indiceDepart != indiceArrivee){
+			if(indiceDepart == INDICE_MAX){
+				
+			}
 		}
 		
 	}
