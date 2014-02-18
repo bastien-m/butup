@@ -8,11 +8,15 @@ import org.jeu.Pile.Bouton;
 public class Plateau {
 
 	private static final int INDICE_MAX = 8;
-	private List<Pile> piles;
+	private final List<Pile> piles;
 	
 	Plateau(){
 		piles = new ArrayList<>();
 		creationPlateau();
+	}
+	
+	Plateau(List<Pile> liste_piles){
+		piles = liste_piles;
 	}
 	
 	void creationPlateau(){
@@ -28,22 +32,33 @@ public class Plateau {
 		int indicePileArrivee = correctionIndex(indiceArrivee);
 		
 		Pile depart = piles.get(indicePileDepart);
-		Pile Arrivee = piles.get(indicePileArrivee);
 		
-		//6 4 --> 7 8 0 1 2 3 4
-		boolean estTermine = false;
-		while(indiceDepart != indiceArrivee){
-			if(indiceDepart == INDICE_MAX){
-				
+		while((indicePileArrivee !=  indicePileDepart - 1) && !depart.estVide()){
+			empiler(depart, piles.get(indiceArrivee));
+			
+			if(indicePileArrivee == INDICE_MAX){
+				indicePileArrivee = 0;
 			}
+			else{
+				indicePileArrivee++;
+			}
+		}
+		if(!depart.estVide()){
+			depart.empiler(piles.get(correctionIndex(indiceArrivee)));
 		}
 		
 	}
+	
+	void empiler(Pile aDeplacer, Pile pileReception){
+		pileReception.empiler(aDeplacer.depiler());
+	}
+	
 	
 	private int correctionIndex(int indice){
 		return indice - 1;
 	}
 	
+	@Override
 	public String toString(){
 		return piles.toString();
 	}

@@ -29,6 +29,11 @@ public class Pile {
 		this.pile.addAll(pile.getPile());
 	}
 	
+	void empiler(Pile.Bouton bouton){
+		this.pile.add(bouton);
+	}
+	
+	
 	List<Bouton> getPile(){
 		return this.pile;
 	}
@@ -60,12 +65,24 @@ public class Pile {
 			return false;
 		return true;
 	}
+	
+	boolean pileJouable(){
+		for(Pile.Bouton bouton : pile){
+			if(bouton == Pile.Bouton.BLANC)
+				return true;
+		}
+		return false;
+	}
 
 	Bouton depiler(){
 		int indiceMax = pile.size() - 1;
 		return pile.remove(indiceMax);
 	}
 
+	boolean estVide(){
+		return pile.isEmpty();
+	}
+	
 	@Override
 	public String toString(){
 		return this.pile.toString();
