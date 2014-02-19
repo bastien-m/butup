@@ -24,11 +24,16 @@ public class Pile {
 		this.pile = piles;
 	}
 	
-	
+	/**
+	 * @param pile empiler pile sur this
+	 */
 	void empiler(Pile pile){
 		this.pile.addAll(pile.getPile());
 	}
 	
+	/**
+	 * @param bouton empiler sur this
+	 */
 	void empiler(Pile.Bouton bouton){
 		this.pile.add(bouton);
 	}
