@@ -15,9 +15,9 @@ public class Plateau extends LinkedList<Pile>{
 	private ListIterator<Pile> listIterator;
 	
 	public Plateau(){
-		listIterator = this.listIterator();
 		creationPlateau();
 		Collections.shuffle(this);
+		listIterator = this.listIterator();
 	}
 	
 	private void creationPlateau(){
@@ -29,16 +29,25 @@ public class Plateau extends LinkedList<Pile>{
 	}
 	
 	Plateau(List<Pile> piles){
-		listIterator = this.listIterator();
 		this.addAll(piles);
+		listIterator = this.listIterator();
 	}
 	
 	public Pile suivant(){
+		Pile suivant = listIterator.next();
 		if(listIterator.hasNext()){
-			return listIterator.next();
+			return suivant;
 		}
 		listIterator = this.listIterator();
-		return listIterator.next();
+		return suivant;
 	}
 	
+	public Pile precedent(){
+		if(listIterator.hasPrevious()){
+			return listIterator.previous();
+		}
+		else{
+			return this.getLast();
+		}
+	}
 }
