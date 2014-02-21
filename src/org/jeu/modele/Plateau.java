@@ -3,6 +3,7 @@ package org.jeu.modele;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 import org.jeu.modele.Pile.Bouton;
 
@@ -11,10 +12,10 @@ public class Plateau extends LinkedList<Pile>{
 
 	private static final long serialVersionUID = -2853347309110574836L;
 	private static final int NB_PILE = 9;
-	private int currentPosition;
+	private ListIterator<Pile> listIterator;
 	
 	public Plateau(){
-		currentPosition = 0;
+		listIterator = this.listIterator();
 		creationPlateau();
 		Collections.shuffle(this);
 	}
@@ -28,17 +29,16 @@ public class Plateau extends LinkedList<Pile>{
 	}
 	
 	Plateau(List<Pile> piles){
-		currentPosition = 0;
+		listIterator = this.listIterator();
 		this.addAll(piles);
 	}
 	
 	public Pile suivant(){
-		Pile elementCourant = get(currentPosition);
-		currentPosition++;
-		if(currentPosition >= this.size()){
-			currentPosition = 0;
+		if(listIterator.hasNext()){
+			return listIterator.next();
 		}
-		return elementCourant;
+		listIterator = this.listIterator();
+		return listIterator.next();
 	}
 	
 }

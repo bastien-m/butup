@@ -1,12 +1,12 @@
 package org.jeu.modele;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.jeu.modele.Pile.Bouton;
 
 
-public class Pile extends ArrayList<Bouton>{
+public class Pile extends LinkedList<Bouton>{
 
 	private static final long serialVersionUID = 8591227950719216099L;
 
@@ -22,7 +22,7 @@ public class Pile extends ArrayList<Bouton>{
 	}
 	
 	public Pile(Bouton couleur){
-		this.add(couleur);
+		this.offer(couleur);
 	}
 	
 	

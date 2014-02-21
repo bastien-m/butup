@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ListIterator;
 
-import org.jeu.modele.Pile;
 import org.jeu.modele.Pile.Bouton;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,9 +36,9 @@ public class PileTest {
 	@Test
 	public void testEquals(){
 		Pile p0 = new Pile(Bouton.NOIRE);
-		p0.add(Bouton.ROUGE);
+		p0.offer(Bouton.ROUGE);
 		Pile p1 = new Pile(Bouton.NOIRE);
-		p1.add(Bouton.ROUGE);
+		p1.offer(Bouton.ROUGE);
 		
 		assertTrue(p0.equals(p1));
 	}
