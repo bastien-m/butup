@@ -1,6 +1,7 @@
-package org.jeu.metier;
+package org.jeu.modele;
 
 import org.jeu.modele.Pile.Bouton;
+
 
 public class Joueur {
 
