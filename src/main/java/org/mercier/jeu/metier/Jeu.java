@@ -11,7 +11,6 @@ public class Jeu {
 	
 	private final Plateau plateau;
 	private final Joueur j1, j2;
-	private Pile pileCourante;
 	
 	public Jeu(Plateau p, Joueur j1, Joueur j2){
 		plateau = p;
@@ -34,14 +33,16 @@ public class Jeu {
 	
 	public void semer(int depart, int arrivee){
 		Pile pileDepart = plateau.get(depart);
-		avancerCurseur(plateau.get(arrivee));
+		Pile pileCourante = avancerCurseur(arrivee);
 		while(!pileCourante.equals(plateau.get(depart))){
 			pileCourante.add(pileDepart.pollLast());
 		}
 	}
 	
-	private Pile avancerCurseur(Pile arrivee){
-		while(!(pileCourante = plateau.suivant()).equals(arrivee)){}
+	Pile avancerCurseur(int arrivee){
+		Pile pileCourante;
+		Pile pileArrivee = plateau.get(arrivee);
+		while(!(pileCourante = plateau.suivant()).equals(pileArrivee)){}
 		return pileCourante;
 	}
 	
@@ -55,5 +56,9 @@ public class Jeu {
 
 	public Joueur getJoueur2() {
 		return j2;
+	}
+	
+	Pile getPile(int indice){
+		return plateau.get(indice);
 	}
 }
