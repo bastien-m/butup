@@ -1,4 +1,4 @@
-package org.jeu.metier;
+package org.mercier.jeu.metier;
 
 
 

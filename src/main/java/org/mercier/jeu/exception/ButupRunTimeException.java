@@ -1,4 +1,4 @@
-package org.jeu.exception;
+package org.mercier.jeu.exception;
 
 public class ButupRunTimeException extends RuntimeException {
 

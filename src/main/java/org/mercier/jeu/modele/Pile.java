@@ -1,9 +1,9 @@
-package org.jeu.modele;
+package org.mercier.jeu.modele;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import org.jeu.modele.Pile.Bouton;
+import org.mercier.jeu.modele.Pile.Bouton;
 
 
 public class Pile extends LinkedList<Bouton>{

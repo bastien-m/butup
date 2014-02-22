@@ -1,13 +1,12 @@
-package org.jeu.modele;
+package org.mercier.jeu.modele;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
 
-import org.jeu.metier.Jeu;
-import org.jeu.modele.Pile.Bouton;
 import org.junit.Before;
 import org.junit.Test;
+import org.mercier.jeu.metier.Jeu;
+import org.mercier.jeu.modele.Pile.Bouton;
 
 public class JeuTest {
 

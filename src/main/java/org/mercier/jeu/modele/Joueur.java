@@ -1,6 +1,6 @@
-package org.jeu.modele;
+package org.mercier.jeu.modele;
 
-import org.jeu.modele.Pile.Bouton;
+import org.mercier.jeu.modele.Pile.Bouton;
 
 
 public class Joueur {

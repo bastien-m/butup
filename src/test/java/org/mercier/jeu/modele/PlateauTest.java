@@ -1,4 +1,4 @@
-package org.jeu.modele;
+package org.mercier.jeu.modele;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.jeu.modele.Pile.Bouton;
 import org.junit.Before;
 import org.junit.Test;
+import org.mercier.jeu.modele.Pile.Bouton;
 
 
 public class PlateauTest {

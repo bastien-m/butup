@@ -1,13 +1,13 @@
-package org.jeu.modele;
+package org.mercier.jeu.modele;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ListIterator;
 
-import org.jeu.modele.Pile.Bouton;
 import org.junit.Before;
 import org.junit.Test;
+import org.mercier.jeu.modele.Pile.Bouton;
 
 public class PileTest {
 

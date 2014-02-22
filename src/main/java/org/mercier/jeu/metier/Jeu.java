@@ -1,9 +1,9 @@
-package org.jeu.metier;
+package org.mercier.jeu.metier;
 
-import org.jeu.modele.Joueur;
-import org.jeu.modele.Pile;
-import org.jeu.modele.Pile.Bouton;
-import org.jeu.modele.Plateau;
+import org.mercier.jeu.modele.Joueur;
+import org.mercier.jeu.modele.Pile;
+import org.mercier.jeu.modele.Pile.Bouton;
+import org.mercier.jeu.modele.Plateau;
 
 
 public class Jeu {
