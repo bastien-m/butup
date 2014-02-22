@@ -1,38 +1,59 @@
 package org.jeu.metier;
 
+import org.jeu.modele.Joueur;
+import org.jeu.modele.Pile;
+import org.jeu.modele.Pile.Bouton;
+import org.jeu.modele.Plateau;
+
 
 public class Jeu {
 
 	
+	private final Plateau plateau;
+	private final Joueur j1, j2;
+	private Pile pileCourante;
 	
-	/**
-	 * 
-	 * @param indiceDepart deplacer cette pile sur la pile arrivee
-	 * @param indiceArrivee pile arrivee
-	 * @throws ButupException
-	 */
-	/*void semer(int indiceDepart, int indiceArrivee) throws ButupException{
-		int indicePileDepart  = correctionIndex(indiceDepart);
-		int indicePileArrivee = correctionIndex(indiceArrivee);
-		
-		Pile depart = piles.get(indicePileDepart);
-		
-		while((indicePileArrivee !=  indicePileDepart - 1) && !depart.estVide()){
-			empiler(depart, piles.get(indicePileArrivee));
-			
-			if(indicePileArrivee == INDICE_MAX){
-				indicePileArrivee = 0;
-			}
-			else{
-				indicePileArrivee++;
-			}
-		}
-		if(!depart.estVide()){
-			depart.empiler(piles.get(correctionIndex(indiceArrivee)));
-		}
-		
-		this.piles.remove(correctionIndex(indiceDepart));
-		
-	}*/
+	public Jeu(Plateau p, Joueur j1, Joueur j2){
+		plateau = p;
+		this.j1 = j1;
+		this.j2 = j2;
+		correctionCouleur();
+	}
 	
+	void correctionCouleur(){
+		if(j1.getCouleur().equals(Bouton.BLANC)){
+			j1.setCouleur(Bouton.ROUGE);
+		}
+		if(j2.getCouleur().equals(Bouton.BLANC)){
+			j2.setCouleur(j1.getCouleur().adversaire());
+		}
+		if(j1.getCouleur().equals(j2.getCouleur())){
+			j2.setCouleur((j1.getCouleur()).adversaire());
+		}
+	}
+	
+	public void semer(int depart, int arrivee){
+		Pile pileDepart = plateau.get(depart);
+		avancerCurseur(plateau.get(arrivee));
+		while(!pileCourante.equals(plateau.get(depart))){
+			pileCourante.add(pileDepart.pollLast());
+		}
+	}
+	
+	private Pile avancerCurseur(Pile arrivee){
+		while(!(pileCourante = plateau.suivant()).equals(arrivee)){}
+		return pileCourante;
+	}
+	
+	public Plateau getPlateau(){
+		return this.plateau;
+	}
+
+	public Joueur getJoueur1() {
+		return j1;
+	}
+
+	public Joueur getJoueur2() {
+		return j2;
+	}
 }

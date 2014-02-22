@@ -26,6 +26,12 @@ public class PlateauTest {
 	}
 	
 	@Test
+	public void creationPlateau(){
+		Plateau plateau = new Plateau();
+		assertEquals(9, plateau.size());
+	}
+	
+	@Test
 	public void testSuivant(){
 		Pile p0 = p.suivant();
 		Iterator<Pile> it = p.iterator();
@@ -33,7 +39,11 @@ public class PlateauTest {
 		p0 = p.suivant();
 		assertEquals(it.next(), p0);
 		it = null;
-//		p0 = p.suivant();
-//		assertEquals(p.getFirst(), p0);
 	}
+	
+	@Test
+	public void testPrecedent(){
+		assertEquals(p.precedent(), p.getLast());
+	}
+	
 }

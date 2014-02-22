@@ -11,10 +11,10 @@ public class Pile extends LinkedList<Bouton>{
 	private static final long serialVersionUID = 8591227950719216099L;
 
 	public static enum Bouton {
-		BLANC { @Override Bouton adversaire(){ return BLANC;}},
-		NOIRE { @Override Bouton adversaire(){ return ROUGE;}},
-		ROUGE { @Override Bouton adversaire(){ return NOIRE;}};
-		abstract Bouton adversaire();
+		BLANC { @Override public Bouton adversaire(){ return BLANC;}},
+		NOIRE { @Override public Bouton adversaire(){ return ROUGE;}},
+		ROUGE { @Override public Bouton adversaire(){ return NOIRE;}};
+		public abstract Bouton adversaire();
 	}
 	
 	public Pile(){
