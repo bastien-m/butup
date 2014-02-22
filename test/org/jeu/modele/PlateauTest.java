@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.jeu.modele.Pile;
-import org.jeu.modele.Plateau;
 import org.jeu.modele.Pile.Bouton;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +33,7 @@ public class PlateauTest {
 		p0 = p.suivant();
 		assertEquals(it.next(), p0);
 		it = null;
-		p0 = p.suivant();
-		assertEquals(p.getFirst(), p0);
+//		p0 = p.suivant();
+//		assertEquals(p.getFirst(), p0);
 	}
 }
