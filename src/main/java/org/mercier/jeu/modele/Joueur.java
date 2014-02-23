@@ -8,6 +8,7 @@ public class Joueur {
 	private int score;
 	private final String nom;
 	private Bouton couleur;
+	private boolean courant;
 	
 	public Joueur(String nom, Bouton couleur) {
 		this.nom = nom;
@@ -33,6 +34,18 @@ public class Joueur {
 	public String getNom() {
 		return nom;
 	}
-
 	
+	public boolean isCourant() {
+		return courant;
+	}
+
+	public void setCourant(boolean courant) {
+		this.courant = courant;
+	}
+
+	@Override
+	public String toString(){
+		return (getNom() + " , couleur : " + getCouleur() + " , score : " 
+				+ getScore());
+	}
 }

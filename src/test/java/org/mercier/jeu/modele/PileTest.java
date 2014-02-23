@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ListIterator;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -41,5 +42,15 @@ public class PileTest {
 		p1.offer(Bouton.ROUGE);
 		
 		assertTrue(p0.equals(p1));
+	}
+	
+	@Test
+	public void testGetScore(){
+		Map<Bouton, Integer> scores = p.getScores();
+		int scoreRouge = scores.get(Bouton.ROUGE);
+		assertEquals(1, scoreRouge);
+		int scoreNoire = scores.get(Bouton.NOIRE);
+		assertEquals(2, scoreNoire);
+		
 	}
 }

@@ -13,7 +13,7 @@ import org.mercier.jeu.modele.Pile.Bouton;
 
 public class PlateauTest {
 
-	private Plateau p;
+	private Plateau p, p1;
 	
 	@Before
 	public void setUp(){
@@ -23,6 +23,7 @@ public class PlateauTest {
 		piles.add(pile0);
 		piles.add(pile1);
 		p = new Plateau(piles);
+		p1 = new Plateau();
 	}
 	
 	@Test
@@ -39,11 +40,20 @@ public class PlateauTest {
 		p0 = p.suivant();
 		assertEquals(it.next(), p0);
 		it = null;
+		p0 = p.suivant();
+		assertEquals(p.getFirst(), p0);
 	}
 	
 	@Test
 	public void testPrecedent(){
-		assertEquals(p.precedent(), p.getLast());
+		assertEquals(p.getLast(), p.precedent());
+		assertEquals(p.getFirst(), p.precedent());
 	}
 	
+	@Test
+	public void testPlacerCurseur(){
+		Pile pile = p1.placerCurseur(3);
+		Pile pile4 = p1.get(3);
+		assertEquals(pile4, pile);
+	}
 }
