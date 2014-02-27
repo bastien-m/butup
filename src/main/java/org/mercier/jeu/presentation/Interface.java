@@ -47,7 +47,7 @@ public class Interface extends JFrame{
 		
 		setLayout(new BorderLayout());
 		
-		setIconImage(new ImageIcon("ressources/icon.png").getImage());
+		setIconImage(new ImageIcon("resources/icon.png").getImage());
 		
 		barMenu = new JMenuBar();
 		barMenu.setBackground(Color.gray);
@@ -89,7 +89,7 @@ public class Interface extends JFrame{
 		panelPlateau = new JPanel(new BorderLayout());
 		panelPlateau.setPreferredSize(new Dimension(300,100));
 		plateau = new JLabel();
-		plateau.setIcon(new ImageIcon("ressources/wood.jpg"));
+		plateau.setIcon(new ImageIcon("resources/wood.jpg"));
 		panelPlateau.add(plateau);
 		add(panelPlateau);
 		
