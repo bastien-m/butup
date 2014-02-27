@@ -118,7 +118,7 @@ public class JeuTest {
 		Jeu jeu = new Jeu(new Plateau(piles), new Joueur("Bastien", Bouton.NOIRE), new Joueur("Claudy", Bouton.ROUGE));
 		jeu.setScoresJoueurs();
 		int scoreJoueur1 = 0;
-		int scoreJoueur2 = 4;
+		int scoreJoueur2 = 2;
 		assertEquals(scoreJoueur1, jeu.getJoueur1().getScore());
 		assertEquals(scoreJoueur2, jeu.getJoueur2().getScore());
 	}

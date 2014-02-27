@@ -33,7 +33,7 @@
                 <manifest>
                 <addClasspath>true</addClasspath>
                 <classpathPrefix>lib/</classpathPrefix>
-                        <mainClass>org.mercier.jeu.presentation.InstanceConsole</mainClass>
+                        <mainClass>org.mercier.jeu.presentation.InstanceInterface</mainClass>
                 </manifest>
                 </archive>
                 </configuration>

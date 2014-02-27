@@ -48,9 +48,9 @@ public class PileTest {
 	public void testGetScore(){
 		Map<Bouton, Integer> scores = p.getScores();
 		int scoreRouge = scores.get(Bouton.ROUGE);
-		assertEquals(1, scoreRouge);
+		assertEquals(0, scoreRouge);
 		int scoreNoire = scores.get(Bouton.NOIRE);
-		assertEquals(2, scoreNoire);
+		assertEquals(1, scoreNoire);
 		
 	}
 }
