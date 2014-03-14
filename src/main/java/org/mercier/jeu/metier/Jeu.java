@@ -13,6 +13,12 @@ public class Jeu {
 	private Plateau plateau;
 	private final Joueur j1, j2;
 	
+	public Jeu(Joueur j1, Joueur j2){
+		this.plateau = new Plateau();
+		this.j1 = j1;
+		this.j2 = j2;
+	}
+	
 	public Jeu(Plateau p, Joueur j1, Joueur j2){
 		plateau = p;
 		this.j1 = j1;

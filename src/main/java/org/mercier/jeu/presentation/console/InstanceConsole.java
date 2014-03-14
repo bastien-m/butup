@@ -1,4 +1,5 @@
-package org.mercier.jeu.presentation;
+package org.mercier.jeu.presentation.console;
+
 
 public class InstanceConsole {
 	

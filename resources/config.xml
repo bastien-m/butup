@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings>
+	<!-- Linux and Microsoft -->
+	<system id="Linux">
+		<shortcuts>
+			<connexion>ctrl alt C</connexion>
+			<nouvellePartie>ctrl N</nouvellePartie>
+			<reorganiser>ctrl alt R</reorganiser>
+		</shortcuts>
+	</system>
+	<system id="Mac">
+		<shortcuts>
+			<connexion>meta alt C</connexion>
+			<nouvellePartie>meta N</nouvellePartie>
+			<reorganiser>meta alt R</reorganiser>
+		</shortcuts>
+	</system>
+</settings>
